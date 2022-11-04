@@ -74,8 +74,17 @@
                         </th:block>
 <!--                    </ul>-->
                 </td>
-                <td><a th:href="@{admin/update/{id}(id=${user.getId()})}">Edit</a></td>
-                <td><a th:href="@{admin/delete/{id}(id=${user.id})}">Delete</a></td>
+                <td> <div>
+                    <form th:method="GET" th:action="@{admin/update/{id}(id=${user.getId()})}" th:object="${user}">
+                        <input type="submit" value="Edit"/>
+                    </form>
+                </div>
+                <td>
+                    <div>
+                        <form th:method="DELETE" th:action="@{admin/delete/{id}(id=${user.id})}" th:object="${user}">
+                            <input type="submit" value="Delete"/>
+                        </form>
+                    </div></td>
             </tr>
             </tbody>
         </table>

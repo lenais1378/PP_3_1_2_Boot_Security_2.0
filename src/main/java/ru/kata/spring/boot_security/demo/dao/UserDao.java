@@ -4,7 +4,7 @@ import ru.kata.spring.boot_security.demo.model.User;
 
 import java.util.List;
 
-public interface UseDaoInterf {
+public interface UserDao {
     User findByName(String username);
     void delete(Long id);
     void update(User us);
