@@ -1,4 +1,4 @@
-package ru.kata.spring.boot_security.demo.userinit;
+package ru.kata.spring.boot_security.demo.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,8 +13,12 @@ import java.util.List;
 @Component
 public class DataInitializer {
 
-    @Autowired
     private UserServiceImpl userService;
+
+    @Autowired
+    public DataInitializer(UserServiceImpl userService) {
+        this.userService = userService;
+    }
 
     @PostConstruct
     public void init() {
